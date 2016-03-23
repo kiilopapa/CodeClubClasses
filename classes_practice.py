@@ -38,13 +38,56 @@ class Cat:
 
 # Exercise 1 Make 3 cats, with different names and ages. (These are called Instances of a class)
 
+nurr = Cat("Nurr", 2)
+miisu = Cat("Miisu", 3)
+kiti = Cat("Kiti", 0)
+
+print(kiti.react_to("pet"))
+
 # Exercise 2 Give all three cats the pet or sneeze stimulus and see what they respond, do they respond differently?
+
+nurrreact = nurr.react_to("pet")
+miisureact = miisu.react_to("pet")
+kitireact = kiti.react_to("sneeze")
+
+print(nurrreact)
+print(miisureact)
+print(kitireact)
+
 
 # Make one of the cats make sound
 
+kiti.make_sound()
+
 # Make cat sound without using one of your 3 cats.
 
+Cat.make_sound()
+
 # Now make your own class about anything that interest you
+
+class Car:
+
+    def __init__(self, model, gasoline, consumption): # litres # litres/100km
+        self.model = model
+        self.gasoline = gasoline
+        self.consumption = consumption
+
+    def drive(self, distance): #kilometres
+        consumed = (distance/100) * self.consumption
+        if self.gasoline>= consumed:
+            print("You drove " + distance + " kilometers and consumed " + consumed + " litres of gasoline")
+            self.gasoline -= consumed
+            print("You have " + str(self.gasoline) + "litres of gasoline left !")
+        else:
+            distance = self.gasoline/self.consumption
+
+            print("You drove " + distance + " kilometers and consumed " + consumed + " litres of gasoline")
+            print("You are stuck on the road")
+            self.gasoline=0
+
+accord = Car("accord", 30, 6.3)
+
+accord.drive(50)
 
 # example: RPG Games
 
